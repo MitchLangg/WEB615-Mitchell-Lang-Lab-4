@@ -12,7 +12,7 @@ gem 'bootstrap_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use Puma as the app server
-gem 'sqlite3'
+gem 'pg', '~> 0.21'
 gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails'
@@ -34,13 +34,16 @@ gem 'redis', '~> 3.0'
 gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+group :production do
+  gem 'rails_12factor'
+end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
+
 end
 
 group :development do
