@@ -35,6 +35,9 @@
 
       <div class="panel-footer">
         <%= link_to 'New User', new_user_path, class: 'btn btn-default' %>
+        <%= will_paginate @users %>
+        <br />
+        <%= page_entries_info @users %>
       </div>
 
     </div>
